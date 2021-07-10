@@ -14,7 +14,31 @@ namespace CSharpProgramming1
         public static String schoolAddress;
         public static String schoolName;
 
+        public Student()
+        {
+ 
+        }
+        public Student(int rollNo)
+        {
+            this._studentRollNumber = rollNo;
+        }
 
+        public Student(int rollNo,int b)
+        {
+          
+        }
+        public Student(double rollNo)
+        {
+           
+        }
+        public Student(int rollNo,string name)
+        {
+
+        }
+        public Student(string rollNo, int name)
+        {
+
+        }
         //public int getStudentRollNumber()
         //{
         //    return _studentRollNumber;

@@ -4,13 +4,12 @@ using System.Text;
 
 namespace CSharpProgramming
 {
-    class Employee
+    public class Employee
     {
         public int empId;
         public String empName;
         public double empSalary;
         public static String companyName;
-
 
         //printemployeedetail
         public static void PrintEmployeeDetail(Employee emp)

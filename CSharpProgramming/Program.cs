@@ -1,52 +1,99 @@
 ﻿using CSharpProgramming;
 using CSharpProgramming1;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Maveric.CSharpProgramming
 {
     class Program
     {
+        //public static bool checkE(List<string> colors, string checkE)
+        //{
+        //    foreach (string c in colors)
+        //    {
+        //        if (c.Contains("e"))
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
+        public static bool checkE(string input)
+        {
+            return input.Contains("e");
+        }
         static void Main(string[] args)
         {
-            Student.schoolName= "Global";
-            Student.schoolAddress = "Global #33";
 
-            Student stu1 = new Student();
+            int a = 10;
+            int b = 0;
 
-            Student stu2 = new Student();
+            Console.WriteLine(b/a);
 
-            //Student stu3=Student.Id("lll");
+            //add a method to existing class using C# extension
+            Employee e = new Employee();
+            e.EmpTest(2);
 
-            //Student stu1 = Student.CreateStudentInstance();
-            //Student stu2 = Student.CreateStudentInstance();
+            List<int> numbers = new List<int> { 1, 2, 65, 85, 75,65 };
 
-            //Student.PrintStudentDetail(stu1);
+            var output=  numbers.Where(x => x > 50);
 
-            //stu1.studentRollNumber = -1001;
+           int firstmatchingValue= numbers.First(x => x == 65);
+
+            foreach(var i in output)
+            {
+                Console.WriteLine(i);
+            }    
 
 
-            stu1.StudentRollNumber = 1001;
-            stu1.studentName = "jack";
-            stu1.studentMailId = "jack@gmail.com";
-            stu1.studentAddress = "jack #12";
-            stu1.studentPercentage = 88.8;
+            List<string> colors = new List<string>();
+            colors.Add("red");
+            colors.Add("yellow");
+            colors.Add("green");
+            colors.Add("pink");
 
-            int no = stu1.StudentRollNumber;
-            Console.WriteLine(no);
-
-            //Student.PrintStudentDetail(stu1);
            
-            stu2.StudentRollNumber = 1002;
-            stu2.studentName = "Peter";
-            stu2.studentMailId = "Peter@gmail.com";
-            stu2.studentAddress = "Peter #12";
-            stu2.studentPercentage = 55.8;
+            //replace with query and method syntax
+            foreach (string color in colors)
+            {
+                Console.WriteLine(Program.checkE(color));
+                
+            }
 
-            //Student.PrintStudentDetail(stu2);
+
+            //Query syntax
+            var lists = from color in colors
+                        where color.Contains("e")
+                        select color;
 
 
-            stu1.PrintStudentRecord();
-            stu2.PrintStudentRecord();
+            foreach(string s in lists)
+            {
+                Console.WriteLine(s);
+            }
+
+            //method syntax
+
+            var lists1= colors.Where(x => x.Contains("e"));
+
+            foreach (string s in lists1)
+            {
+                Console.WriteLine(s);
+            }
+
+            //colors.ForEach(color => Console.WriteLine(color+" "+color.Length));
+
+
+            //for(int i=0;i<colors.Count ;i++)
+            //{
+            //    Console.WriteLine(colors[i]);
+            //}
+
+            //foreach(string color in colors)
+            //{
+            //    Console.WriteLine(color+" "+color.Length);
+            //}
 
         }
     }
